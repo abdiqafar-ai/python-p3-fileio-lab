@@ -1,8 +1,41 @@
+
 def write_file(file_name, file_content):
-    pass
+    """
+    Write content to a .txt file. If the file_name does not include the .txt extension, it will be added.
+    """
+    file_name = str(file_name)  
+    if not file_name.endswith('.txt'):
+        file_name += '.txt'
+    with open(file_name, 'w') as file:
+        file.write(file_content)
+
+    print(f"File '{file_name}' has been written successfully.")
 
 def append_file(file_name, append_content):
-    pass
+    """
+    Append content to an existing .txt file. If the file_name does not include the .txt extension, it will be added.
+    """
+   
+    file_name = str(file_name)  
+    if not file_name.endswith('.txt'):
+        file_name += '.txt'
+
+    with open(file_name, 'a') as file:
+        file.write(append_content)
+
+    print(f"Content has been appended to '{file_name}'.")
 
 def read_file(file_name):
-    pass
+    """
+    Read and return the content of a .txt file. If the file_name does not include the .txt extension, it will be added.
+    """
+    
+    file_name = str(file_name)  
+    if not file_name.endswith('.txt'):
+        file_name += '.txt'
+
+    with open(file_name, 'r') as file:
+        file_content = file.read()
+
+    return file_content
+
